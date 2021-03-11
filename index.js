@@ -52,6 +52,7 @@ app.get("/client.js", (req, res) => {
       set(key, contentType, content) {
         return fetch("https://dhat-store.herokuapp.com/api/objects/" + key, {
           method: "PUT",
+          mode: "cors",
           headers: {
             "Content-Type": contentType
           },
@@ -61,7 +62,8 @@ app.get("/client.js", (req, res) => {
 
       get(key) {
         return fetch("https://dhat-store.herokuapp.com/api/objects/" + key, {
-          method: "GET"
+          method: "GET",
+          mode: "cors",
         });
       }
     };
