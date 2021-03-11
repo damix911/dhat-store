@@ -45,6 +45,7 @@ app.put("/api/objects/:key", (req, res) => {
 });
 
 app.get("/client.js", (req, res) => {
+  res.setHeader("content-type", "text/javascript;charset=UTF-8")
   res.send(`
     const DhatStore = {
       set(key, contentType, content) {
