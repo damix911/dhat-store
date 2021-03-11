@@ -3,6 +3,8 @@ const cors = require("cors")
 
 const app = express();
 
+app.use(cors());
+
 app.use(express.raw({
   type: "application/vnd.google-earth.kml+xml"
 }));
@@ -13,7 +15,7 @@ app.use(express.raw({
 
 const objects = new Map();
 
-app.get("/api/objects/:key", cors(), (req, res) => {
+app.get("/api/objects/:key", (req, res) => {
   const key = req.params["key"];
   
   const {
@@ -27,7 +29,7 @@ app.get("/api/objects/:key", cors(), (req, res) => {
   res.send(body);
 });
 
-app.put("/api/objects/:key", cors(), (req, res) => {
+app.put("/api/objects/:key", (req, res) => {
   const key = req.params["key"];
   const contentType = req.headers["content-type"];
   const body = req.body;
