@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Simple object storage web API ready for Heroku.",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/damix911/dhat-store.git"
@@ -16,6 +15,7 @@
   },
   "homepage": "https://github.com/damix911/dhat-store#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   }
 }
