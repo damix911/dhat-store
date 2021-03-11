@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors")
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use(express.raw({
 
 const objects = new Map();
 
-app.get("/api/objects/:key", (req, res) => {
+app.get("/api/objects/:key", cors(), (req, res) => {
   const key = req.params["key"];
   
   const {
@@ -26,7 +27,7 @@ app.get("/api/objects/:key", (req, res) => {
   res.send(body);
 });
 
-app.put("/api/objects/:key", (req, res) => {
+app.put("/api/objects/:key", cors(), (req, res) => {
   const key = req.params["key"];
   const contentType = req.headers["content-type"];
   const body = req.body;
