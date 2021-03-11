@@ -49,7 +49,7 @@ app.get("/client.js", (req, res) => {
   res.send(`
     const DhatStore = {
       set(key, contentType, content) {
-        return fetch("/api/objects/" + key, {
+        return fetch("https://dhat-store.herokuapp.com/api/objects/" + key, {
           method: "PUT",
           headers: {
             "Content-Type": contentType
@@ -59,7 +59,7 @@ app.get("/client.js", (req, res) => {
       },
 
       get(key) {
-        return fetch("/api/objects/" + key, {
+        return fetch("https://dhat-store.herokuapp.com/api/objects/" + key, {
           method: "GET"
         });
       }
